@@ -10,15 +10,13 @@ public class Date {
 	private int day; //day is from [1, 31];
 
 	public Date() {
-		this.year = 1000;
-		this.month = 1;
-		this.day = 1;
+		year = 1000;
+		month = 1;
+		day = 1;
 	}
 
 	public Date(int year, int month, int day) {
-		setYear(year);
-		setMonth(month);
-		setDay(day);
+		setDate(year, month, day);
 	}
 
 	public int getYear() {
