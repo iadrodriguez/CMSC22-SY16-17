@@ -45,7 +45,10 @@ public class Date {
 	}
 
 	public void setDay(int day) {
-		if (day > 31) {
+		if (day < 1) {
+			throw new IllegalArgumentException("There's no such negative day!");
+		}
+	else if (day > 31) {
             throw new IllegalArgumentException("One month has a maximum number of 31 days!");
         } else if (this.month == 2 && !((this.year % 4 == 0 && this.year % 100 != 0) || (this.year % 400 == 0)) && day > 28) {
             throw new IllegalArgumentException("This year is not a leap year. We only have 28 days in February.");
