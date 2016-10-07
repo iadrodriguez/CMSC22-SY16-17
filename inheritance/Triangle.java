@@ -15,13 +15,14 @@ public class Triangle extends Shape{
 	}
 
 	public Triangle(double s1, double s2, double s3, String color, boolean filled) {
-		if ((s1 + s2 < s3) || (s1 + s3 < s2) || (s2 + s3 < s1)) {
+		super(color, filled);
+		if ((s1 + s2 <= s3) || (s1 + s3 <= s2) || (s2 + s3 <= s1)) {
 			throw new IllegalArgumentException("illegal sides of a triangle!");
 		} else {
 			this.s1 = s1;
 			this.s2 = s2;
 			this.s3 = s3;
-			super(color, filled);
+			
 		}
 	}
 
@@ -45,8 +46,8 @@ public class Triangle extends Shape{
 		this.s2 = s2;
 	}
 
-	public void setSide1(double s1) {
-		this.s1 = s1;
+	public void setSide3(double s3) {
+		this.s3 = s3;
 	}
 
 	@Override
@@ -57,7 +58,7 @@ public class Triangle extends Shape{
 	@Override
 	public double getArea() { 
 		double p = getPerimeter() / 2;
-		return (MATH.sqrt(p));
+		return Math.sqrt(p);
 	}
 
 	public String toString() {
