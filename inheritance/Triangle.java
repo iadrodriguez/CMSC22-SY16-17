@@ -58,7 +58,7 @@ public class Triangle extends Shape{
 	@Override
 	public double getArea() { 
 		double p = getPerimeter() / 2;
-		return Math.sqrt(p);
+		return Math.sqrt(p * (p - s1) * (p - s2) * (p - s3));
 	}
 
 	public String toString() {
